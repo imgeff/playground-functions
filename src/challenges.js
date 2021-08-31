@@ -19,7 +19,7 @@ function splitSentence(string) {
 
 // Desafio 4
 function concatName(array) {
- return array[array.length - 1]+",".concat(array[0]);
+  return "'" + array[array.length - 1] + ','.concat(array[0]); + "'"
 }
 
 // Desafio 5
@@ -31,8 +31,20 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(arrayNumber) {
+  let maiorNumber = 0;
+  let contMaiorNumber = 0;
+  for (let index = 0; index < arrayNumber.length; index += 1) {
+    if(arrayNumber[index] > maiorNumber) {
+      maiorNumber = arrayNumber[index];
+    }
+  }
+  for(let index = 0; index < arrayNumber.length; index += 1) {
+    if(arrayNumber[index] === maiorNumber) {
+      contMaiorNumber += 1;
+    }
+  }
+  return contMaiorNumber;
 }
 
 // Desafio 7

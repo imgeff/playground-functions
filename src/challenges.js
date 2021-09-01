@@ -19,7 +19,14 @@ function splitSentence(string) {
 
 // Desafio 4
 function concatName(array) {
-  return "'" + array[array.length - 1] + ','.concat(array[0]); + "'"
+  // parametro é array
+  // pegar a ultima e a primeira  posição do array 
+  // transformar o array em uma string e retornar
+  let firstPosition = array[0];
+  let lastPosition = array[array.length -1];
+  let concatArrays = array[array.length - 1] + ", ".concat(array[0]);
+  let result = concatArrays;
+  return result;
 }
 
 // Desafio 5
@@ -62,8 +69,13 @@ function catAndMouse(mouse, cat1, cat2) {
 
 // Desafio 8
 function fizzBuzz(arrayNumber) {
+// parametro arrayNumber
+// retornar tudo em uníco array 
+// se divisivel por 3 e 5 adiciona "fizz buzz"
+// se divisivel por 3 adiciona "fizz"
+// se divisivel por 5 adiciona "buzz"
+// nenhum dos casos adiciona "bug!"
 let result = [];
-
   for(let index = 0; index < arrayNumber.length; index += 1 ) {
   if (arrayNumber[index] % 3 === 0 && arrayNumber[index] % 5 === 0) {
     result.push('fizzBuzz');

@@ -3,11 +3,11 @@
 // SE AMBOS forem verdadeiros = true
 // SE algum dos valores for false = false
 function compareTrue(valor1, valor2) {
-if (valor1 && valor2 === true) {
-  return true;
-} else {
-  return false;
-}
+  if (valor1 && valor2 === true) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // Desafio 2
@@ -15,31 +15,31 @@ if (valor1 && valor2 === true) {
 // formula = base x altura / 2
 // retornar o cálculo
 function calcArea(base, height) {
-return (base * height) / 2;
+  return (base * height) / 2;
 }
 
 // Desafio 3
 /** https://www.devmedia.com.br/javascript-split-dividindo-separando-strings/39254 */
 // parametro é string
 // transformar string em array
-// retornar array de strings 
-// o que definirá a separação das strings são os espaços
+// retornar array de strings. 
+// o que definirá a separação das strings são os espaços.
 function splitSentence(string) {
-return string.split(" ");
+  return string.split(" ");
 }
 
 // Desafio 4
-  /** https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/concat */
-  // parametro é array
-  // pegar a ultima e a primeira  posição do array 
-  // transformar o array em uma string e retornar
+/** https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/concat */
+// parametro é array
+// pegar a ultima e a primeira  posição do array 
+// transformar o array em uma string e retornar.
 function concatName(array) {
 
-let firstPosition = array[0];
-let lastPosition = array[array.length -1];
-let concatArrays = array[array.length - 1] + ", ".concat(array[0]);
-let result = concatArrays;
-return result;
+  let firstPosition = array[0];
+  let lastPosition = array[array.length -1];
+  let concatArrays = array[array.length - 1] + ", ".concat(array[0]);
+  let result = concatArrays;
+  return result;
 }
 
 // Desafio 5
@@ -117,11 +117,66 @@ let result = [];
   return result;
 }
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(string) {
+  // transformar string em array
+  // fazer um array vazio para receber a troca
+  // String como parametro
+  // Trocar vogais por numeros
+  // transformar o array em string
+  let arrayLetters = string.split("");
+  let arrayString = [];
+  for (let index = 0; index < arrayLetters.length; index += 1) {
+    switch (arrayLetters[index]) {
+      case "a":
+        arrayString.push("1");
+        break;
+      case "e":
+        arrayString.push("2");
+        break;
+      case "i":
+        arrayString.push("3");
+        break; 
+      case "o":
+        arrayString.push("4");
+        break;
+      case "u":
+        arrayString.push("5");
+        break;
+      default:
+        arrayString.push(arrayLetters[index]);
+        break;
+    }
+  }
+  return arrayString.join("")
+
 }
-function decode() {
-  // seu código aqui
+function decode(string) {
+  // trocar os numeros por letras
+  let arrayLetters = string.split("");
+  let arrayString = [];
+  for (let index = 0; index < arrayLetters.length; index += 1) {
+    switch (arrayLetters[index]) {
+      case "1":
+        arrayString.push("a");
+        break;
+      case "2":
+        arrayString.push("e");
+        break;
+      case "3":
+        arrayString.push("i");
+        break; 
+      case "4":
+        arrayString.push("o");
+        break;
+      case "5":
+        arrayString.push("u");
+        break;
+      default:
+        arrayString.push(arrayLetters[index]);
+        break;
+    }
+  }
+  return arrayString.join("")
 }
 
 module.exports = {

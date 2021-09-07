@@ -57,8 +57,21 @@ for (let index = 2; index < arrayNumber.length; index += 1) {
 return numberGenerate.join('');
 }
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+  // Parametros lineA, lineB, lineC
+  // medida de qualquer um dos lados tem que ser menor do que a soma dos outros 2 lados  e ainda ser maior que a diferença entre medidas
+  // return booleano
+let somaAB= Math.abs(lineA + lineB);
+let somaAC = Math.abs(lineA + lineC);
+let somaBC = Math.abs(lineB + lineC);
+let diferenceAB = Math.abs(lineA - lineB);
+let diferenceAC = Math.abs(lineA - lineC);
+let diferenceBC = Math.abs(lineB -lineC);
+if (lineA > somaBC || lineA < diferenceBC || lineB > somaAC || lineB < diferenceAC || lineC > somaAB || lineC < diferenceAB) {
+  return false;
+} else {
+  return true;
+}
 }
 
 // Desafio 13

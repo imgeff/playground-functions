@@ -75,8 +75,24 @@ if (lineA > somaBC || lineA < diferenceBC || lineB > somaAC || lineB < diference
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(string) {
+  // Parametro String
+  // A cada copo de bebida é igual a um de agua como sugestão
+  // Consultei esses links para resolver esse Desafio: 
+  // https://www.horadecodar.com.br/2021/01/21/como-converter-uma-string-para-int-em-javascript/
+  // https://stackoverflow.com/questions/10003683/how-can-i-extract-a-number-from-a-string-in-javascript
+let extractNumber = string.replace( /[^\d\.]*/g, '')
+let arrayNumber = extractNumber.split('')
+let sum = parseInt(arrayNumber[0]);
+for (let index = 1; index < arrayNumber.length; index += 1) {
+  sum += parseInt(arrayNumber[index]);
+}
+if (sum > 1) {
+  return sum + ' copos de água'
+} else {
+  return sum + ' copo de água'
+}
+
 }
 
 module.exports = {
@@ -85,3 +101,4 @@ module.exports = {
   hydrate,
   triangleCheck,
 };
+
